@@ -6,6 +6,18 @@ import Image from 'next/image'
 import { TextEffect } from '@/components/ui/text-effect'
 import { AnimatedGroup } from '@/components/ui/animated-group'
 import { HeroHeader } from './header'
+import BackgroundImage from '@/public/night-background.webp'
+import HeroLight from '@/public/screenshot-light.png'
+import HeroDark from '@/public/screenshot-dark.png'
+import ArkjetLogo from '@/public/companies/arkjet.png'
+import KindeLogo from '@/public/companies/kinde.png'
+import MotionLogo from '@/public/companies/motion.png'
+import NeonLogo from '@/public/companies/neon.png'
+import OrpcLogo from '@/public/companies/orpc.webp'
+import PrismaLogo from '@/public/companies/prisma.svg'
+import VercelLogo from '@/public/companies/vercel.svg'
+
+
 
 const transitionVariants = {
   item: {
@@ -71,7 +83,7 @@ export default function HeroSection() {
               }}
               className="mask-b-from-35% mask-b-to-90% absolute inset-0 top-56 -z-20 lg:top-32">
               <Image
-                src="https://ik.imagekit.io/lrigu76hy/tailark/night-background.jpg?updatedAt=1745733451120"
+                src={BackgroundImage }
                 alt="background"
                 className="hidden size-full dark:block"
                 width="3276"
@@ -88,7 +100,7 @@ export default function HeroSection() {
                   <Link
                     href="#link"
                     className="hover:bg-background dark:hover:border-t-border bg-muted group mx-auto flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950">
-                    <span className="text-foreground text-sm">Introducing Support for AI Models</span>
+                    <span className="text-foreground text-sm">Introducing new AI features</span>
                     <span
                       className="dark:border-background block h-4 w-0.5 border-l bg-white dark:bg-zinc-700"></span>
 
@@ -112,7 +124,7 @@ export default function HeroSection() {
                   speedSegment={0.3}
                   as="h1"
                   className="mx-auto mt-8 max-w-4xl text-balance text-5xl max-md:font-semibold md:text-7xl lg:mt-16 xl:text-[5.25rem]">
-                  Modern Solutions for Customer Engagement
+                  The AI-ready home for team communication
                 </TextEffect>
                 <TextEffect
                   per="line"
@@ -121,7 +133,7 @@ export default function HeroSection() {
                   delay={0.5}
                   as="p"
                   className="mx-auto mt-8 max-w-2xl text-balance text-lg">
-                  Highly customizable components for building modern websites and applications that look and feel the way you mean it.
+                  Taminsight organizes conversations into channels with threads, is realtime, and uses AI to keep teams in sync.
                 </TextEffect>
 
                 <AnimatedGroup
@@ -136,13 +148,13 @@ export default function HeroSection() {
                     },
                     ...transitionVariants,
                   }}
-                  className="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row">
+                  className="mt-12 flex flex-col items-center justify-center gap-5 md:flex-row">
                   <div
                     key={1}
                     className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5">
                     <Button asChild size="lg" className="rounded-xl px-5 text-base">
                       <Link href="#link">
-                        <span className="text-nowrap">Start Building</span>
+                        <span className="text-nowrap">Get Started</span>
                       </Link>
                     </Button>
                   </div>
@@ -150,7 +162,7 @@ export default function HeroSection() {
                     key={2}
                     asChild
                     size="lg"
-                    variant="ghost"
+                    variant="secondary"
                     className="h-10.5 rounded-xl px-5">
                     <Link href="#link">
                       <span className="text-nowrap">Request a demo</span>
@@ -177,14 +189,14 @@ export default function HeroSection() {
                 <div
                   className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
                   <Image
-                    className="bg-background aspect-15/8 relative hidden rounded-2xl dark:block"
-                    src="/mail2.png"
+                    className="bg-background aspect-15/8 relative hidden rounded-2xl dark:block object-contain object-top"
+                    src={HeroDark}
                     alt="app screen"
                     width="2700"
                     height="1440" />
                   <Image
-                    className="z-2 border-border/25 aspect-15/8 relative rounded-2xl border dark:hidden"
-                    src="/mail2-light.png"
+                    className="z-2 border-border/25 aspect-15/8 relative rounded-2xl border dark:hidden object-contain object-top"
+                    src={HeroLight}
                     alt="app screen"
                     width="2700"
                     height="1440" />
@@ -206,59 +218,54 @@ export default function HeroSection() {
             <div
               className="group-hover:blur-xs mx-auto mt-12 grid max-w-2xl grid-cols-4 gap-x-12 gap-y-8 transition-all duration-500 group-hover:opacity-50 sm:gap-x-16 sm:gap-y-14">
               <div className="flex">
-                <img
-                  className="mx-auto h-5 w-fit dark:invert"
-                  src="https://html.tailus.io/blocks/customers/nvidia.svg"
-                  alt="Nvidia Logo"
-                  height="20"
-                  width="auto" />
+                <Image
+                  className="mx-auto h-7 object-contain dark:invert"
+                  src={ArkjetLogo}
+                  alt="Arkjet Logo" 
+                  />
               </div>
 
               <div className="flex">
-                <img
+                <Image
                   className="mx-auto h-4 w-fit dark:invert"
-                  src="https://html.tailus.io/blocks/customers/column.svg"
-                  alt="Column Logo"
-                  height="16"
-                  width="auto" />
+                  src={KindeLogo}
+                  alt="Kinde Logo"
+                  />
               </div>
               <div className="flex">
-                <img
+                <Image
                   className="mx-auto h-4 w-fit dark:invert"
-                  src="https://html.tailus.io/blocks/customers/github.svg"
-                  alt="GitHub Logo"
-                  height="16"
-                  width="auto" />
+                  src={VercelLogo}
+                  alt="Vercel Logo"
+                  />
               </div>
               <div className="flex">
-                <img
-                  className="mx-auto h-5 w-fit dark:invert"
-                  src="https://html.tailus.io/blocks/customers/nike.svg"
-                  alt="Nike Logo"
-                  height="20"
-                  width="auto" />
+                <Image
+                  className="mx-auto h-5 w-fit invert dark:invert-0"
+                  src={NeonLogo}
+                  alt="Neon Logo"
+                  />
               </div>
               <div className="flex">
-                <img
-                  className="mx-auto h-5 w-fit dark:invert"
-                  src="https://html.tailus.io/blocks/customers/lemonsqueezy.svg"
-                  alt="Lemon Squeezy Logo"
-                  height="20"
-                  width="auto" />
+                <Image
+                  className="mx-auto h-6 w-fit invert dark:invert-0"
+                  src={OrpcLogo}
+                  alt="Orpc Logo"
+                  />
               </div>
               <div className="flex">
-                <img
-                  className="mx-auto h-4 w-fit dark:invert"
-                  src="https://html.tailus.io/blocks/customers/laravel.svg"
+                <Image
+                  className="mx-auto h-7 w-fit dark:invert"
+                  src={PrismaLogo}
                   alt="Laravel Logo"
                   height="16"
                   width="auto" />
               </div>
               <div className="flex">
-                <img
-                  className="mx-auto h-7 w-fit dark:invert"
-                  src="https://html.tailus.io/blocks/customers/lilly.svg"
-                  alt="Lilly Logo"
+                <Image
+                  className="mx-auto h-7 w-fit invert dark:invert-0"
+                  src={MotionLogo}
+                  alt="Motion Logo"
                   height="28"
                   width="auto" />
               </div>
